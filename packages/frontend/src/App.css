@@ -1,94 +1,183 @@
-.App {
-  text-align: center;
-  max-width: 800px;
+.app-shell {
+  max-width: 960px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 1.5rem 1rem 2.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  padding: 20px;
-  color: white;
-  border-radius: 8px;
-  margin-bottom: 20px;
+.hero {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--accent-soft) 100%);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin: 1rem 0 1.25rem;
+  box-shadow: 0 8px 20px rgba(79, 58, 44, 0.08);
+  animation: fade-up 0.45s ease;
 }
 
-.App-header h1 {
+.eyebrow {
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #7c6050;
+}
+
+.hero h1 {
   margin: 0;
-  font-size: 1.8rem;
+  color: #47372d;
+  font-size: 2rem;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.hero-copy {
+  margin: 0.5rem 0 0;
+  color: #5b4b3f;
 }
 
-section {
-  background-color: #f5f5f5;
-  padding: 20px;
+.grid-layout {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.panel {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.task-form,
+.edit-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+label {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #4b3b30;
+}
+
+input[type='text'],
+input[type='date'] {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.add-item-section form {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-input {
-  flex: 1;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 0.5rem 0.65rem;
+  background-color: #fffaf6;
 }
 
 button {
-  padding: 8px 16px;
-  background-color: #61dafb;
-  color: #282c34;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
+  min-height: 44px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
 }
 
-button:hover {
-  background-color: #21a1c9;
+.button-primary {
+  background-color: var(--accent-primary);
+  border-color: #b89b8f;
+  color: #2c1f18;
 }
 
-ul {
-  list-style-type: none;
+.button-primary:hover {
+  background-color: #c9ac9f;
+}
+
+.button-secondary {
+  background-color: #efe6df;
+  border-color: var(--border);
+  color: #4a392f;
+}
+
+.button-secondary:hover {
+  background-color: #e5d8cf;
+}
+
+.button-danger {
+  background-color: #8a5340;
+  color: #fff;
+}
+
+.button-danger:hover {
+  background-color: #774535;
+}
+
+.list-heading {
+  margin-bottom: 1rem;
+}
+
+.list-heading h2 {
+  margin: 0;
+}
+
+.list-heading p {
+  margin: 0.35rem 0 0;
+  color: #6a5648;
+}
+
+.task-list {
+  list-style: none;
   padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
 }
 
-li {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  text-align: left;
+.task-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem;
+  background-color: #fffaf6;
+  animation: fade-up 0.35s ease;
+}
+
+.task-content {
+  margin-bottom: 0.65rem;
+}
+
+.task-name {
+  margin: 0;
+  font-weight: 600;
+  color: #362920;
+}
+
+.task-meta {
+  margin: 0.35rem 0 0;
+  color: #715d4f;
+}
+
+.action-row {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-li:last-child {
-  border-bottom: none;
-}
-
-.delete-btn {
-  background-color: #f44336;
-  color: white;
-  padding: 6px 12px;
-  font-size: 0.8rem;
-  margin-left: 10px;
-}
-
-.delete-btn:hover {
-  background-color: #d32f2f;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .error {
-  color: #d32f2f;
-  font-weight: bold;
+  color: #8a2f2f;
+  font-weight: 600;
+}
+
+@media (min-width: 900px) {
+  .app-shell {
+    padding: 2rem 1.25rem 3rem;
+  }
+
+  .grid-layout {
+    grid-template-columns: 0.95fr 1.35fr;
+    align-items: start;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
