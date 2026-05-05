@@ -6,7 +6,7 @@ test.describe('Frontend App', () => {
     await page.waitForLoadState('networkidle');
     
     // Verify page title
-    await expect(page).toHaveTitle(/Vite App|React App|frontend/i);
+    await expect(page).toHaveTitle(/Copilot Bootcamp/i);
   });
 
   test('should display items list on the page', async ({ page }) => {
