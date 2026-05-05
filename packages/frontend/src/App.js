@@ -76,8 +76,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>To Do App</h1>
-        <p>Keep track of your tasks</p>
+        <h1>React Frontend with Node Backend</h1>
+        <p>Connected to in-memory database</p>
       </header>
 
       <main>
